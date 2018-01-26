@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SparkTical</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<% if (!user) { %>
+			<p>
+			<a href="/">Home</a> | 
+			<a href="/login">Log In</a>
+			</p>
+		<% } else { %>
+			<p>
+			<a href="/">Home</a> | 
+			<a href="/addcustomer">Add New Customer</a> |
+			<a href="/logout">Log Out</a>
+			</p>
+			<p></p>
+			<p>PLEASE NOTE</p>
+			<ol>
+			    <p>Only validated US/Canada cell phone numbers will be allowed to interact with this application! </p>
+			    <p>Please ask the customer to use the auto-generated Mobile Access Code when requested</p>
+			    <p>You will be required to participate as the "Live Spark Agent". <br>This application will create a Spark conversation between you and the customer. <br>Therefore, you are electing to recieve 1:1 SMS messages into your Spark account!</p>
+			</ol>
+			<form action="<%= action %>" method="post">
+  
+            <% if (fields.length) { %>
+                <% fields.forEach(function(field){ %>
+                <p>
+                    <label><%= field.label %></label>
+                    <input type="<%= field.type %>" name="<%= field.name %>" <% if (field.property) { %> <%= field.property %> <% } %> >
+                </p>
+                <% }) %>
+            <% } %>
+            <button type="submit"><%= title %></button> <!--Title for button is same as that of the page-->
+            </form>
+		<% } %>
+		
+	</body>
+</html>
