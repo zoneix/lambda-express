@@ -1,4 +1,4 @@
-// Refer to https://claudiajs.com/tutorials/serverless-express.html for deplyment commands
+// Refer to https://claudiajs.com/tutorials/servclauerless-express.html for deplyment commands
 
 require('dotenv').config();
 const express = require('express');
@@ -34,7 +34,7 @@ router.use(function(req, res, next) {
     next(); 
 });
 
-//router.get('/',(req, res)=> res.send(process.env.SPARKCLIENTID));
+router.get('/',(req, res)=> res.send(req.originalUrl));
 router.get('/code',(req, res)=> res.send('Im inside the code path of router'));
 router.get('/callback',(req, res)=> res.send(req.protocol + '://' + req.get('host') + '/latest' + req.originalUrl));
 router.get('/hooks/:hookid',(req, res)=> res.send('got hookid = ' + req.params.hookid));
