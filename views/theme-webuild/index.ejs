@@ -17,6 +17,9 @@
   <!-- siimple style -->
   <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/style.css" rel="stylesheet">
 
+  <!-- div tables for call buttons style sheet-->
+ <link href="https://cdn.rawgit.com/zoneix/lambda-express/9e3db9d8/views/theme-webuild/assets/css/divtable.css" rel="stylesheet">
+
   <!-- geo-location -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key="+process.env.MAPAPIKEY+"&callback=initMap"
@@ -95,6 +98,20 @@ function codeLatLng(lat, lng) {
             </div>
             <button type="submit" class="btn btn-theme">Directory Lookup</button>
           </form>
+
+          <div class="divTable blueTable">
+              <div class="divTableBody">
+              <div class="divTableRow">
+                <div class="divTableCell">cell1_1</div>
+                <div class="divTableCell">cell2_1</div>
+                <div class="divTableCell">cell3_1</div>
+                <div class="divTableCell">cell4_1</div>
+                <div class="divTableCell">cell5_1</div>
+              </div>
+            </div>
+          </div>
+
+
 
           <div id="listings" class="row" style="padding: 5px 0 3px 0">
                 <div style="padding: 5px 5px 5px 0;">
