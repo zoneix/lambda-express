@@ -5,6 +5,7 @@ div.blueTable {
     height: 75px;
     text-align: center;
     border-collapse: collapse;
+    margin:auto;
   }
   .divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
     border: 2px solid #AAAAAA;
