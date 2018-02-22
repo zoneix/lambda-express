@@ -18,7 +18,9 @@
   <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/style.css" rel="stylesheet">
 
   <!-- geo-location -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key="+process.env.MAPAPIKEY+"&callback=initMap"
+  type="text/javascript"></script>
 <script type="text/javascript"> 
 var geocoder;
 if (navigator.geolocation) {
@@ -77,28 +79,30 @@ function codeLatLng(lat, lng) {
 
 </head>
 
-<body style="background: #363756;" onload="initialize()">
+<body style="background: #363100px;" onload="initialize()">
 
   <div id="wrapper" style="height: 100%; position:relative;">
     <div class="container" style="position: absolute;bottom: 0;top: 0;left:0;right:0;margin:auto; height:85%">
       <div class="row">
         <div class="col-md-12">
-          <h1>Ozark Kiosk</h1>
+          <img src="https://cdn.rawgit.com/zoneix/lambda-express/51699688/views/theme-webuild/assets/img/logo-blk.png" style="filter: invert(100); width: 150px; padding: 5px 0 5px 0;">
+          <h1 style="padding: 10px 0 10px 0; margin:auto">Ozark Kiosk</h1>
           <h2 class="subtitle">Virtual lobby ambassadors powered by the Cisco Spark SDK</h2>
           <!--div id="countdown"></div-->
           <form class="form-inline signup" role="form" style="padding: 15px 0 15px 0;">
             <div class="form-group">
-              <input type="text" class="form-control" id="searchToken" placeholder="Enter company name" style="margin:auto; text-align:center">
+              <input type="text" class="form-control" id="searchToken" placeholder="Enter person's name" style="margin:auto; text-align:center">
             </div>
             <button type="submit" class="btn btn-theme">Directory Lookup</button>
           </form>
 
           <div id="listings" class="row" style="padding: 5px 0 3px 0">
-            <ul>
-              <li>Company 1</li>
-              <li>Company 2</li>
-              <li>Company 3</li>
-            </ul>
+                <div style="padding: 5px 5px 5px 0;">
+                  <button type="submit" class="btn btn-theme" style="width: 100px; height: 125px; padding: 5px 5px 5px 5px; font-size: 20px; background-color:#c100px36; border-color:#c100px36"> Suite 101 CTG (Collaboration) </button>
+                  <button type="submit" class="btn btn-theme" style="width: 100px; height: 125px; padding: 5px 5px 5px 5px; font-size: 20px; background-color:#c100px36; border-color:#c100px36"> Suite 201 Sales - Federal </button>
+                  <button type="submit" class="btn btn-theme" style="width: 100px; height: 125px; padding: 5px 5px 5px 5px; font-size: 20px; background-color:#c100px36; border-color:#c100px36"> Suite 301 Sales - Commercial </button>
+                  <button type="submit" class="btn btn-theme" style="width: 100px; height: 125px; padding: 5px 5px 5px 5px; font-size: 20px; background-color:#c100px36; border-color:#c100px36"> Suite 401 WNBU (Wireless) </button>
+                </div>
           </div>
 
           <div class="social">
