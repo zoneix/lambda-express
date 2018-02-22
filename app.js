@@ -29,9 +29,15 @@ app.use(logger('combined'));
 app.get('/', (req, res) => res.send('Hello Lambda world - you are too much fun!'));
 app.get('/someother', (req, res) => res.send('yea got someother!'));
 app.post('/', (req, res) => res.send('Recieved a POST method'));
+*/
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-
+/*
 //Initialize Spark
 app.use(function(req, res, next) {
     req.spark = CiscoSpark.init({

@@ -10,36 +10,96 @@
   <title>Webuild - Free Bootstrap coming soon template with countdown</title>
 
   <!-- Bootstrap -->
-  <link href="theme-webuild/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="theme-webuild/assets/css/bootstrap-theme.css" rel="stylesheet">
-  <link href="theme-webuild/assets/css/font-awesome.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/font-awesome.css" rel="stylesheet">
 
   <!-- siimple style -->
-  <link href="theme-webuild/assets/css/style.css" rel="stylesheet">
+  <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: WeBuild
-    Theme URL: https://bootstrapmade.com/free-bootstrap-coming-soon-template-countdwon/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+  <!-- geo-location -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript"> 
+var geocoder;
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+} 
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng)
+}
+
+function errorFunction(){
+    alert("Geocoder failed");
+}
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+}
+
+function codeLatLng(lat, lng) {
+  var latlng = new google.maps.LatLng(lat, lng);
+  geocoder.geocode({'latLng': latlng}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+    console.log(results)
+      if (results[1]) {
+        //formatted address
+        alert(results[0].formatted_address)
+      //find country name
+            for (var i=0; i<results[0].address_components.length; i++) {
+          for (var b=0;b<results[0].address_components[i].types.length;b++) {
+
+          //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+              if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                  //this is the object you are looking for
+                  city= results[0].address_components[i];
+                  break;
+              }
+          }
+      }
+      //city data
+      //alert(city.short_name + " " + city.long_name)
+
+
+      } else {
+        alert("No results found");
+      }
+    } else {
+      alert("Geocoder failed due to: " + status);
+    }
+  });
+}
+</script> 
+
+
+
 </head>
 
-<body>
+<body style="background: #363756;" onload="initialize()">
 
-  <div id="wrapper">
-    <div class="container">
+  <div id="wrapper" style="height: 100%; position:relative;">
+    <div class="container" style="position: absolute;bottom: 0;top: 0;left:0;right:0;margin:auto; height:85%">
       <div class="row">
         <div class="col-md-12">
-          <h1>WeBuild</h1>
-          <h2 class="subtitle">We're working hard to improve our website and we'll ready to launch after</h2>
-          <div id="countdown"></div>
-          <form class="form-inline signup" role="form">
+          <h1>Ozark Kiosk</h1>
+          <h2 class="subtitle">Virtual lobby ambassadors powered by the Cisco Spark SDK</h2>
+          <!--div id="countdown"></div-->
+          <form class="form-inline signup" role="form" style="padding: 15px 0 15px 0;">
             <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+              <input type="text" class="form-control" id="searchToken" placeholder="Enter company name" style="margin:auto; text-align:center">
             </div>
-            <button type="submit" class="btn btn-theme">Get notified!</button>
+            <button type="submit" class="btn btn-theme">Directory Lookup</button>
           </form>
+
+          <div id="listings" class="row" style="padding: 5px 0 3px 0">
+            <ul>
+              <li>Company 1</li>
+              <li>Company 2</li>
+              <li>Company 3</li>
+            </ul>
+          </div>
 
           <div class="social">
             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -50,6 +110,7 @@
         </div>
       </div>
 
+      <!--
       <div class="row contctform">
         <div class="col-md-8 col-md-offset-2">
           <h3>Contact Us</h3>
@@ -85,10 +146,17 @@
         </form>
 
       </div>
+    -->
+    <div id="weather-widget" class="row" style="padding: 30px 0px 30px 0;">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/39d04n77d23/20854/?unit=us" data-label_1="POTOMAC" data-label_2="What it feels like..." data-theme="weather_one" >POTOMAC What it feels like...</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+    </div>
 
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-          <p class="copyright">&copy; WeBuild - All Rights Reserved</p>
+          <p class="copyright">&copy; 2018 Cisco Systems - CTG Practices - All Rights Reserved</p>
           <div class="credits">
             <!--
               All the links in the footer should remain intact. 
@@ -103,15 +171,15 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.countdown.min.js"></script>
+  <script src="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/js/bootstrap.min.js"></script>
+  <script src="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/js/jquery.countdown.min.js"></script>
   <script type="text/javascript">
     $('#countdown').countdown('2019/01/01', function(event) {
       $(this).html(event.strftime('%w weeks %d days <br /> %H:%M:%S'));
     });
   </script>
 
-  <script src="contactform/contactform.js"></script>
+  <script src="https://s3.amazonaws.com/ozark-assets/theme-webuild/contactform/contactform.js"></script>
 
 </body>
 
