@@ -9,8 +9,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "assert": "^1.4.1",
     "aws-serverless-express": "^3.0.2",
     "body-parser": "^1.18.2",
+    "ciscospark": "^1.28.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",
@@ -19,6 +21,7 @@
     "lodash": "^4.17.4",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
-    "passport-cisco-spark": "^1.0.3"
+    "passport-cisco-spark": "^1.0.3",
+    "url": "^0.11.0"
   }
 }
