@@ -7,12 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Free coming soon template with jQuery countdown">
 
-  <title>Webuild - Free Bootstrap coming soon template with countdown</title>
+  <title>Ozark Kiosk</title>
 
   <!-- Bootstrap -->
   <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/bootstrap.css" rel="stylesheet">
   <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/bootstrap-theme.css" rel="stylesheet">
-  <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/font-awesome.css" rel="stylesheet">
+  <!--link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/font-awesome.css" rel="stylesheet"-->
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+
+  
 
   <!-- siimple style -->
   <link href="https://s3.amazonaws.com/ozark-assets/theme-webuild/assets/css/style.css" rel="stylesheet">
@@ -88,39 +93,46 @@ function codeLatLng(lat, lng) {
     <div class="container" style="position: absolute;bottom: 0;top: 0;left:0;right:0;margin:auto; height:85%">
       <div class="row">
         <div class="col-md-12">
-          <img src="https://cdn.rawgit.com/zoneix/lambda-express/51699688/views/theme-webuild/assets/img/logo-blk.png" style="filter: invert(100); width: 150px; padding: 5px 0 5px 0;">
-          <h1 style="padding: 10px 0 10px 0; margin:auto">Ozark Kiosk</h1>
-          <h2 class="subtitle">Virtual lobby ambassadors powered by the Cisco Spark SDK</h2>
+
+          <img src="https://cdn.rawgit.com/zoneix/lambda-express/51699688/views/theme-webuild/assets/img/logo-blk.png" style="filter: invert(100); width: 90px; padding: 5px 0 5px 0;">
+          <h1 style="padding: 10px 0 10px 0; margin:auto">10101 Ozark Way Suites</h1>
+          <h2 class="subtitle">Virtual lobby kiosks powered by Cisco Spark</h2>
           <!--div id="countdown"></div-->
-          <form class="form-inline signup" role="form" style="padding: 15px 0 15px 0;">
+
+          <form class="form-inline signup" role="form" style="padding: 15px 0 45px 0;">
             <div class="form-group">
               <input type="text" class="form-control" id="searchToken" placeholder="Enter person's name" style="margin:auto; text-align:center">
             </div>
             <button type="submit" class="btn btn-theme">Directory Lookup</button>
           </form>
 
-          <div class="divTable blueTable">
+          <div class="divTable blueTable" style="margin:auto; padding: 10px 0 0 0">
               <div class="divTableBody">
               <div class="divTableRow">
-                <div class="divTableCell" style="background-color:#4F92AF">
-                  <img src="https://cdn.rawgit.com/zoneix/lambda-express/9f124f63/views/theme-webuild/assets/img/cisco-logo-blk.png" style="filter: invert(100); width: 75px; padding: 5px 0 5px 0;">
-                  <p>SUITE 100</p>
-                  <p>Cisco Systems Inc<br><b>FEDERAL SALES</b></p>
-                </div>
-                <div class="divTableCell" style="background-color:#4F92AF">
+                <div class="divTableCell" style="background-color:rgba(79, 146, 175, 0.80)">
+                  <div class="divTableCellLogo" style="height:65px;">
                     <img src="https://cdn.rawgit.com/zoneix/lambda-express/9f124f63/views/theme-webuild/assets/img/cisco-logo-blk.png" style="filter: invert(100); width: 75px; padding: 5px 0 5px 0;">
-                    <p>SUITE 200</p>
-                    <p>Cisco Systems Inc<br><b>COLLABORATION<br>TECHNOLOGY<br>GROUP</b></p>
+                  </div>
+                  <p><i class="fas fa-phone-square"></i><b> SUITE 100</b></p>
                 </div>
-                <div class="divTableCell" style="background-color:rgb(223, 145, 56)">
-                    <img src="https://cdn.rawgit.com/zoneix/lambda-express/c7b8edaa/views/theme-webuild/assets/img/broadsoft-logo.png" style="width: 75px; padding: 5px 0 5px 0;">
-                    <p>SUITE 300</p>
-                    <p>Cisco Systems Inc<br><b>BROADSOFT</b></p>
+                <div class="divTableCell" style="background-color:rgba(79, 146, 175, 0.80)">
+                    <div class="divTableCellLogo" style="height:65px;">
+                      <img src="https://cdn.rawgit.com/zoneix/lambda-express/9f124f63/views/theme-webuild/assets/img/cisco-logo-blk.png" style="filter: invert(100); width: 75px; padding: 5px 0 5px 0;">
+                    </div>
+                    <p><i class="fas fa-phone-square"></i><b> SUITE 200</b></p>
                 </div>
-                <div class="divTableCell" style="background-color:rgb(79, 175, 154)">
-                    <img src="https://cdn.rawgit.com/zoneix/lambda-express/c7b8edaa/views/theme-webuild/assets/img/cisco-meraki-logo.png" style="width: 75px; padding: 5px 0 5px 0;">
-                    <p>SUITE 400</p>
-                    <p>Cisco Systems Inc<br><b>MERAKI</b></p>
+                <div class="divTableCell" style="background-color:rgba(223, 145, 56, 0.80)">
+                    <div class="divTableCellLogo" style="height:65px;">  
+                      <img src="https://cdn.rawgit.com/zoneix/lambda-express/c7b8edaa/views/theme-webuild/assets/img/broadsoft-logo.png" style="width: 100px; padding: 5px 0 5px 0;">
+                    </div>
+                    <p onclick=""><i class="fas fa-phone-square"></i><b> SUITE 300</b></p>
+                </div>
+                <div class="divTableCell" style="background-color:#f5f5f5de; color:#000000;">
+                    <div  class="divTableCellLogo" style="height:65px;">
+                      <img src="https://cdn.rawgit.com/zoneix/lambda-express/c7b8edaa/views/theme-webuild/assets/img/cisco-meraki-logo.png" style="width: 60px; padding: 5px 0 5px 0;">
+                    </div>
+                    <p><b> SUITE 400</b></p>
+                    <p><i class="fal fa-phone fa-3x"></i></p>
                 </div>
               </div>
             </div>
@@ -128,9 +140,9 @@ function codeLatLng(lat, lng) {
 
 
           <div class="social">
-            <a href="https://www.facebook.com/Cisco/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/CiscoCollab?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/company/cisco/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/Cisco/"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/CiscoCollab?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/cisco/"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
